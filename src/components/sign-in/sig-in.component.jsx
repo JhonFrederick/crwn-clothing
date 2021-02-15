@@ -1,8 +1,10 @@
 import React from "react";
 
-import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+import { signInWithGoole } from "../../firebase/firebase.utils";
+
+import "./sign-in.styles.scss";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -41,6 +43,7 @@ class SignIn extends React.Component {
                      handleChange={this.handleChange}
                      value={this.state.password} required/>
           <CustomButton type="submit">SIGN IN</CustomButton>
+          <CustomButton onClick={signInWithGoole}>SIGN IN WITH GOOLE</CustomButton>
         </form>
       </div>
     )
